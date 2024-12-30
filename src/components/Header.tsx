@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import Image from 'next/image'
 import React, { useState, useEffect, useRef } from 'react'
@@ -12,7 +12,8 @@ import { useActivePath } from './useActivePath';
 import { Navbar } from 'flowbite-react';
 
 const Header = () => {
-	const [darkMode, setDarkMode] = useLocalStorage<boolean | null>("gnceec:theme", null, { initializeWithValue: true });
+	const [darkMode, setDarkMode] = useLocalStorage<boolean|null>("gnceec:theme", null, { initializeWithValue: true });
+	const [isClient, setIsClient] = useState(false);
 	const navOpacity = useRef<HTMLDivElement>(null);
 	const toggleButton = useRef<HTMLDivElement>(null);
 	const dropdownRef = useRef<HTMLDivElement>(null);
@@ -22,7 +23,8 @@ const Header = () => {
 	const [fllDropdownOpen, setFllDropdownOpen] = useState(false);
 
 	useEffect(() => {
-		if (darkMode == null) setDarkMode(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)
+		setIsClient(true);
+		if (darkMode === null) setDarkMode(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)
 	}, []);
 
 	const toggleSwitch = () => {
@@ -124,7 +126,7 @@ const Header = () => {
 								className={"w-full flex flex-row items-center text-md md:text-lg  hover:text-cyan-700 dark:hover:text-white hover:bg-gray-100 md:hover:bg-transparent dark:hover:bg-gray-700 md:dark:hover:bg-transparent px-3 md:px-0 py-2 md:py-0 border-b border-gray-100 dark:border-gray-700 md:border-none focus:outline-none " + (checkActivePath("/seasons") ? "text-gray-700 dark:text-white" : "text-gray-700 dark:text-gray-400")}
 								onClick={(e) => { e.preventDefault(); e.stopPropagation(); toggleDropdown(); }}
 							>
-								Seasons <FaChevronDown className="ml-1 mt-0.5" size={15}/>
+								Seasons <FaChevronDown className="ml-1 mt-0.5" size={15} />
 							</button>
 							<AnimatePresence>
 								{dropdownOpen && (
@@ -153,7 +155,7 @@ const Header = () => {
 														className="absolute left-full top-0 mt-0 w-40 bg-white dark:bg-gray-600 rounded-md shadow-lg"
 													>
 														<Link href="/seasons/ftc/2425" className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md">
-															24-25<br/>Into The Deep
+															24-25<br />Into The Deep
 														</Link>
 													</motion.div>
 												)}
@@ -177,10 +179,10 @@ const Header = () => {
 														className="absolute left-full top-0 mt-0 w-40 bg-white dark:bg-gray-600 rounded-md shadow-lg"
 													>
 														<Link href="/seasons/fll/2324" className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-t-md">
-															23-24<br/>MASTERPIECE
+															23-24<br />MASTERPIECE
 														</Link>
 														<Link href="/seasons/fll/2223" className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-b-md">
-															22-23<br/>SUPERPOWERED
+															22-23<br />SUPERPOWERED
 														</Link>
 													</motion.div>
 												)}
@@ -191,12 +193,13 @@ const Header = () => {
 							</AnimatePresence>
 						</div>
 						<Navbar.Link active={checkActivePath("/posts")} className='text-md md:text-lg' as={Link} href={"/posts"}>Blog</Navbar.Link>
-						<div ref={toggleButton} className="hidden md:flex p-1 sm:w-12 sm:h-auto justify-start items-center cursor-pointer rounded-full" data-ison={darkMode} onClick={toggleSwitch}>
-							<motion.div className="flex justify-center items-center bg-white w-6 h-6 rounded-full handle" layout transition={{ type: "spring", stiffness: 700, damping: 30 }}>
-								{darkMode ? <FaMoon fill={"black"} size={15} /> : <CiSun fill={"black"} size={35} />}
-							</motion.div>
-						</div>
+
 					</Navbar.Collapse>
+					<div ref={toggleButton} className="hidden md:flex p-1 sm:w-12 sm:h-auto justify-start items-center cursor-pointer rounded-full" data-ison={darkMode} onClick={toggleSwitch}>
+						<motion.div className="flex justify-center items-center bg-white w-6 h-6 rounded-full handle" layout transition={{ type: "spring", stiffness: 700, damping: 30 }}>
+							{isClient ? (darkMode ? <FaMoon fill={"black"} size={15} /> : <CiSun fill={"black"} size={35} />) : <></>}
+						</motion.div>
+					</div>
 				</Navbar>
 			</div>
 		</div>

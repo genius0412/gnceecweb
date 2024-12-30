@@ -14,7 +14,7 @@ export const generateStaticParams = async () => {
 
 const postPage = async (props: any) => {
 	const slug = props.params.slug;
-	const postContent = await getPostContent(slug);
+	const postContent = await getPostContent("posts/"+slug);
 	const likes: string | null = await redis.get(`likes:post:${slug}`);
 	const views: string | null = await redis.get(`views:post:${slug}`);
 
