@@ -43,7 +43,7 @@ const Post = (props: any) => {
 			<div className="flex flex-col w-[90%] xl:w-3/5 py-5 min-h-screen justify-start items-start">
 				<div className="flex flex-col sm:flex-row w-full h-auto sm:items-center sm:space-x-2">
 					<div className='flex flex-row space-x-2 justify-start items-center'>
-						<div className="text-slate-700 dark:text-gray-200">Dohun Kim</div>
+						<div className="text-slate-700 dark:text-gray-200">{postContent.data.author}</div>
 						<div className="block bg-slate-400 rounded-full w-1 h-1"></div>
 						<div className="text-slate-700 dark:text-gray-200">{prettierDate(postContent.data.date)}</div>
 						<div className="hidden sm:block bg-slate-400 rounded-full w-1 h-1"></div>
