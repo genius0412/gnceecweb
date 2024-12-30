@@ -10,6 +10,7 @@ const SeasonOverview = async (props: any) => {
 	if(!['fll', 'ftc'].includes(comp)) notFound();
 
 	const seasonData = await getPostContent("seasons/"+comp+"/"+year);
+	if(seasonData == 404) notFound();
 
 	return (
 		<div className="mt-32 flex flex-col justify-center items-center">
