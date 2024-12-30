@@ -37,7 +37,7 @@ const Header = () => {
 	}
 
 	useEffect(() => {
-		if (navOpacity.current) navOpacity.current.style.setProperty("--tw-bg-opacity", "0");
+		changeHeaderOpacity();
 		window.addEventListener('scroll', changeHeaderOpacity);
 		return () => window.removeEventListener('scroll', changeHeaderOpacity);
 	}, []);

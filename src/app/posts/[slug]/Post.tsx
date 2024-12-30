@@ -38,7 +38,7 @@ const Post = (props: any) => {
 	}
 
 	return (
-		<div className="flex flex-col w-screen h-screen justify-center items-center">
+		<div className="flex flex-col w-screen h-screen justify-center items-center mt-32">
 			<UpdateViewCount slug={slug} />
 			<div className="flex flex-col w-[90%] xl:w-3/5 py-5 min-h-screen justify-start items-start">
 				<div className="flex flex-col sm:flex-row w-full h-auto sm:items-center sm:space-x-2">
