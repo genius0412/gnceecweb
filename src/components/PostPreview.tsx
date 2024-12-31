@@ -29,9 +29,9 @@ const PostPreview = async (props: PostMetadata) => {
 			<div className="flex flex-row text-sm sm:text-md font-normal items-center space-x-1.5 md:space-x-2">
 				<div className="dark:text-slate-400">{prettierDate(props.date)}</div>
 				<div className="bg-slate-400 rounded-full w-1 h-1"></div>
-				<div className="flex flex-row justify-center items-center space-x-0.5"><FaEye className='mr-1 fill-black dark:fill-white' /> {views} <span className="hidden sm:block"> view{views == "1" ? '' : 's'}</span></div>
+				<div className="flex flex-row justify-center items-center space-x-0.5"><FaEye className='mr-1 fill-black dark:fill-white' /> {views}<span className="hidden sm:block pl-0.5">view{views == "1" ? '' : 's'}</span></div>
 				<div className="bg-slate-400 rounded-full w-1 h-1"></div>
-				<div className="flex flex-row justify-center items-center space-x-0.5"><FaHeart className={'mr-1 ' + (liked ? "fill-red-600" : "fill-black dark:fill-white")} /> {likes} <span className="hidden sm:block">like{likes == "1" ? '' : 's'}</span></div>
+				<div className="flex flex-row justify-center items-center space-x-0.5"><FaHeart className={'mr-1 ' + (liked ? "fill-red-600" : "fill-black dark:fill-white")} /> {likes} <span className="hidden sm:block  pl-0.5">like{likes == "1" ? '' : 's'}</span></div>
 			</div>
 		</div>
 	)

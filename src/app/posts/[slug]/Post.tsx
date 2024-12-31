@@ -49,7 +49,7 @@ const Post = (props: any) => {
 						<div className="hidden sm:block bg-slate-400 rounded-full w-1 h-1"></div>
 					</div>
 					<div className="flex flex-row space-x-2 justify-start items-center">
-						<div className="flex flex-row justify-center items-center space-x-1"><FaEye className='mr-1 fill-black dark:fill-white' /> {views} <span className=""> view{views == "1" ? '' : 's'}</span></div>
+						<div className="flex flex-row justify-center items-center space-x-1"><FaEye className='mr-1 fill-black dark:fill-white' /> {views} <span className="">view{views == "1" ? '' : 's'}</span></div>
 						<div className="block bg-slate-400 rounded-full w-1 h-1"></div>
 						<div className="flex flex-row justify-center items-center space-x-1"><FaHeart onClick={() => toggleClick()} className={"mr-1 cursor-pointer " + (liked ? "fill-red-600" : "fill-black dark:fill-white")} /> {likes} <span className="">like{likes == 1 ? '' : 's'}</span></div>
 					</div>
