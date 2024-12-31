@@ -10,6 +10,7 @@ import { useLocalStorage } from 'usehooks-ts'
 import Link from 'next/link';
 import { useActivePath } from './useActivePath';
 import { Navbar } from 'flowbite-react';
+import { usePathname } from 'next/navigation';
 
 const Header = () => {
 	const [darkMode, setDarkMode] = useLocalStorage<boolean|null>("gnceec:theme", null, { initializeWithValue: true });
@@ -18,6 +19,7 @@ const Header = () => {
 	const toggleButton = useRef<HTMLDivElement>(null);
 	const dropdownRef = useRef<HTMLDivElement>(null);
 	const checkActivePath = useActivePath();
+	const pathname = usePathname();
 	const [dropdownOpen, setDropdownOpen] = useState(false);
 	const [ftcDropdownOpen, setFtcDropdownOpen] = useState(false);
 	const [fllDropdownOpen, setFllDropdownOpen] = useState(false);
@@ -26,6 +28,12 @@ const Header = () => {
 		setIsClient(true);
 		if (darkMode === null) setDarkMode(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)
 	}, []);
+
+	useEffect(() => {
+		setDropdownOpen(false);
+		setFtcDropdownOpen(false);
+		setFllDropdownOpen(false);
+	}, [pathname])
 
 	const toggleSwitch = () => {
 		setDarkMode(!darkMode);

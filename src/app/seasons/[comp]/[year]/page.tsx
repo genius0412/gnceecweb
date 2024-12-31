@@ -13,7 +13,7 @@ const SeasonOverview = async (props: any) => {
 	if(seasonData == 404) notFound();
 
 	return (
-		<div className="mt-32 flex flex-col justify-center items-center">
+		<div className="my-32 flex flex-col justify-center items-center">
 			<div className="w-4/5 flex flex-col justify-start items-center">
 				<h1>Season Overview: {comp.toUpperCase()}-{year}</h1>
 				<SeasonContent postMetadata={seasonData.data} postContent={seasonData.content} />

@@ -14,13 +14,17 @@ const About = () => {
 				</p>
 			</div>
 			<div className="flex flex-col justify-center items-center w-screen h-screen">
-				<h1 className="text-4xl font-black">2023 FLL MASTERPIECE</h1>
-				<p className="text-lg w-4/5">{"Revere Qualifier Champion's Award"}
+				<h1 className="text-4xl font-black text-center">2023 FLL MASTERPIECE</h1>
+				<p className="text-lg w-4/5">
+					{"Qualified for States"}<br/>
+					{"MA - 2nd Place Overall, 2nd Place Robot Design, 4th Place Robot Game"}
 				</p>
 			</div>
 			<div className="flex flex-col justify-center items-center w-screen h-screen">
-				<h1 className="text-4xl font-black">2022 FLL SUPERPOWERED</h1>
-				<p className="text-lg w-4/5">{"Revere Qualifier Champion's Award"}
+				<h1 className="text-4xl font-black text-center">2022 FLL SUPERPOWERED</h1>
+				<p className="text-lg w-4/5">
+					{"Revere Qualifier Champion's Award (1st Overall)"}<br/>
+					{"MA - 25th Place Robot Game"}
 				</p>
 			</div>
 		</div>
