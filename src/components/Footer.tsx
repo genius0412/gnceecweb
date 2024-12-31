@@ -4,7 +4,7 @@ import React from 'react'
 
 const WebFooter = () => {
 	return (
-		<Footer container className="flex flex-col md:flex-row items-center">
+		<Footer container className="flex flex-col md:flex-row items-center mt-10">
 			<Footer.Copyright href="#" by="GNCE Electrified Chickens" year={2024} />
 			<Footer.LinkGroup className="mt-1 md:mt-0 flex flex-row items-center">
 				<Footer.Link href="/">Home</Footer.Link>

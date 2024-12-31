@@ -1,30 +1,10 @@
-import { useState, useRef } from 'react';
-
 const About = () => {
 	return (
 		<div className="flex flex-col justify-center items-center w-screen h-auto">
-			<div className="flex flex-col justify-center items-center w-screen h-screen ">
+			<div className="flex flex-col justify-center items-center w-screen min-h-screen prose prose-h1:m-0 prose-h2:m-0 dark:prose-p:text-white prose-strong:text-emerald-600 dark:prose-strong:text-amber-200 dark:prose-invert">
 				<h1 className="text-4xl font-black text-primary-light dark:text-primary-dark">About</h1>
-				<p className="text-lg w-4/5">{"We are a team under GNCE (Galactic Narwhal Chicken Effect), based in Weston, MA, USA, consisting of nine 8th graders and two 9th graders. It was founded in 2022 as an FLL (First Lego League) team with the team number of 28140. "}
-				</p>
-			</div>
-			<div className="flex flex-col justify-center items-center w-screen h-screen">
-				<h1 className="text-4xl font-black">Members</h1>
-				<p className="text-lg w-4/5">{"Our team consists of 11 members, including 9 8th graders and 2 9th graders. We have a variety of skills and interests, ranging from coding to building to researching. "}
-				</p>
-			</div>
-			<div className="flex flex-col justify-center items-center w-screen h-screen">
-				<h1 className="text-4xl font-black text-center">2023 FLL MASTERPIECE</h1>
-				<p className="text-lg w-4/5">
-					{"Qualified for States"}<br/>
-					{"MA - 2nd Place Overall, 2nd Place Robot Design, 4th Place Robot Game"}
-				</p>
-			</div>
-			<div className="flex flex-col justify-center items-center w-screen h-screen">
-				<h1 className="text-4xl font-black text-center">2022 FLL SUPERPOWERED</h1>
-				<p className="text-lg w-4/5">
-					{"Revere Qualifier Champion's Award (1st Overall)"}<br/>
-					{"MA - 25th Place Robot Game"}
+				<p className="text-lg">
+					{"We are a team under GNCE (Galactic Narwhal Chicken Effect), based in Weston, MA, USA, consisting of nine 8th graders and two 9th graders. It was founded in 2022 as an FLL (First Lego League) team with the team number of 28140. "}
 				</p>
 			</div>
 		</div>
