@@ -111,10 +111,10 @@ const Header = () => {
 			<div ref={navOpacity} className="w-[90%] ring-amber-200 dark:ring-slate-700 bg-amber-100 dark:bg-slate-600 backdrop-blur-md transition-all duration-300 rounded-lg flex flex-row justify-between items-center">
 				<Navbar className="w-full h-auto bg-inherit dark:bg-inherit rounded-lg">
 					<Navbar.Brand as={Link} href={"/"}>
-						<Image src={ProfilePicture} alt="Profile Picture" className="mr-3 w-16 h-16 rounded-full hidden md:block -translate-y-0.5" />
-						<div className="text-xl lg:text-3xl lg:font-extrabold text-secondary-light dark:text-secondary-dark">
-							<div className="hidden sm:block">26111 GNCE Electrified Chickens</div>
-							<div className="block sm:hidden">GNCE Electrified Chickens</div>
+						<Image src={ProfilePicture} alt="Profile Picture" className="mr-1 w-14 h-14 rounded-full hidden md:block -translate-y-0.5" />
+						<div className="text-xl lg:text-2xl lg:font-extrabold text-secondary-light dark:text-secondary-dark">
+							<div className="hidden lg:block">26111 GNCE Electrified Chickens</div>
+							<div className="block lg:hidden">26111 GNCE E.C.</div>
 						</div>
 					</Navbar.Brand>
 					<Navbar.Toggle />
