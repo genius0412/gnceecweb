@@ -25,6 +25,9 @@ const config: Config = {
 				secondary: {
 					light: '#684500',
 					dark: '#F6D11D',
+				},
+				gnce: {
+					DEFAULT: "#511a38",
 				}
 			}
 		},
