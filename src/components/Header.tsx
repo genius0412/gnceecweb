@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import React, { useState, useEffect, useRef } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion, AnimatePresence, animate, spring } from 'framer-motion'
 import ProfilePicture from '../../public/images/logo.png';
 import { CiSun } from "react-icons/ci";
 import { FaMoon, FaChevronDown, FaChevronRight } from "react-icons/fa";
@@ -18,6 +18,7 @@ const Header = () => {
 	const navOpacity = useRef<HTMLDivElement>(null);
 	const toggleButton = useRef<HTMLDivElement>(null);
 	const dropdownRef = useRef<HTMLDivElement>(null);
+	const themeIcon = useRef<HTMLDivElement>(null);
 	const checkActivePath = useActivePath();
 	const pathname = usePathname();
 	const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -53,23 +54,23 @@ const Header = () => {
 	}, []);
 
 	useEffect(() => {
+		if(themeIcon.current === null) return;
+		if(toggleButton.current === null) return;
+
 		if (darkMode) {
 			// DarkMode
 			document.documentElement.classList.add('dark');
 
-			toggleButton.current?.classList.remove('justify-start');
-			toggleButton.current?.classList.add('justify-end');
-
-			toggleButton.current?.classList.add('bg-gray-500');
-			toggleButton.current?.classList.remove('bg-slate-400');
+			toggleButton.current.classList.add('bg-gray-500');
+			toggleButton.current.classList.remove('bg-slate-400');
+			animate(themeIcon.current, { x: "1rem" }, { type: "spring", stiffness: 700, damping: 30 });
 		} else {
 			// LightMode
 			document.documentElement.classList.remove('dark');
-			toggleButton.current?.classList.add('justify-start');
-			toggleButton.current?.classList.remove('justify-end');
 
-			toggleButton.current?.classList.add('bg-slate-400');
-			toggleButton.current?.classList.remove('bg-gray-500');
+			toggleButton.current.classList.add('bg-slate-400');
+			toggleButton.current.classList.remove('bg-gray-500');
+			animate(themeIcon.current, { x: "0rem" }, { type: "spring", stiffness: 700, damping: 30 });
 		}
 	}, [darkMode])
 
@@ -203,8 +204,20 @@ const Header = () => {
 						<Navbar.Link active={checkActivePath("/posts")} className='text-md md:text-lg' as={Link} href={"/posts"}>Blog</Navbar.Link>
 
 					</Navbar.Collapse>
-					<div ref={toggleButton} className="hidden md:flex p-1 sm:w-12 sm:h-auto justify-start items-center cursor-pointer rounded-full" data-ison={darkMode} onClick={toggleSwitch}>
-						<motion.div className="flex justify-center items-center bg-white w-6 h-6 rounded-full handle" layout transition={{ type: "spring", stiffness: 700, damping: 30 }}>
+					<div
+						ref={toggleButton}
+						className="hidden md:flex p-1 sm:w-12 sm:h-auto justify-start items-center cursor-pointer rounded-full"
+						data-ison={darkMode}
+						onClick={toggleSwitch}
+						onKeyDown={(e) => {
+							if (e.key === 'Enter' || e.key === ' ') {
+								e.preventDefault();
+								toggleSwitch();
+							}
+						}}
+						tabIndex={0}
+					>
+						<motion.div ref={themeIcon} className="flex justify-center items-center bg-white w-6 h-6 rounded-full handle">
 							{isClient ? (darkMode ? <FaMoon fill={"black"} size={15} /> : <CiSun fill={"black"} size={35} />) : <></>}
 						</motion.div>
 					</div>
