@@ -17,7 +17,7 @@ const SeasonContent = (props: any) => {
 						img: Image
 					}
 				}}
-				className="w-full mt-12 prose prose-h1:mt-5 prose-h1:mb-2 prose-h2:mb-2 prose-h3:mb-0 prose-p:my-0 dark:prose-p:text-white prose-strong:text-emerald-600 dark:prose-strong:text-amber-200 dark:prose-invert">
+				className="w-full mt-12 prose prose-h1:mt-5 prose-h2:mt-3 prose-h1:mb-2 prose-h2:mb-2 prose-h3:mb-0 prose-p:my-0 dark:prose-p:text-white prose-strong:text-emerald-600 dark:prose-strong:text-amber-200 dark:prose-invert">
 				{postContent}
 			</Markdown>
 		</div>
