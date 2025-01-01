@@ -13,7 +13,7 @@ import { Navbar } from 'flowbite-react';
 import { usePathname } from 'next/navigation';
 
 const Header = () => {
-	const [darkMode, setDarkMode] = useLocalStorage<boolean|null>("gnceec:theme", null, { initializeWithValue: true });
+	const [darkMode, setDarkMode] = useLocalStorage<boolean | null>("gnceec:theme", null, { initializeWithValue: true });
 	const [isClient, setIsClient] = useState(false);
 	const navOpacity = useRef<HTMLDivElement>(null);
 	const toggleButton = useRef<HTMLDivElement>(null);
@@ -54,8 +54,8 @@ const Header = () => {
 	}, []);
 
 	useEffect(() => {
-		if(themeIcon.current === null) return;
-		if(toggleButton.current === null) return;
+		if (themeIcon.current === null) return;
+		if (toggleButton.current === null) return;
 
 		if (darkMode) {
 			// DarkMode
@@ -163,9 +163,11 @@ const Header = () => {
 														transition={{ duration: 0.2 }}
 														className="absolute left-full top-0 mt-0 w-40 bg-white dark:bg-gray-600 rounded-md shadow-lg"
 													>
-														<Link href="/seasons/ftc/2425" className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md">
-															24-25<br />Into The Deep
-														</Link>
+														<Navbar.Link as={Link} href="/seasons/ftc/2425" className="">
+															<div className='block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md'>
+																24-25<br />Into The Deep
+															</div>
+														</Navbar.Link>
 													</motion.div>
 												)}
 											</AnimatePresence>
@@ -187,12 +189,16 @@ const Header = () => {
 														transition={{ duration: 0.2 }}
 														className="absolute left-full top-0 mt-0 w-40 bg-white dark:bg-gray-600 rounded-md shadow-lg"
 													>
-														<Link href="/seasons/fll/2324" className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-t-md">
-															23-24<br />MASTERPIECE
-														</Link>
-														<Link href="/seasons/fll/2223" className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-b-md">
-															22-23<br />SUPERPOWERED
-														</Link>
+														<Navbar.Link as={Link} href="/seasons/fll/2324" className="">
+															<div className='block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-t-md'>
+																23-24<br />MASTERPIECE
+															</div>
+														</Navbar.Link>
+														<Navbar.Link as={Link} href="/seasons/fll/2223" className="">
+															<div className='block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-b-md'>
+																22-23<br />SUPERPOWERED
+															</div>
+														</Navbar.Link>
 													</motion.div>
 												)}
 											</AnimatePresence>
