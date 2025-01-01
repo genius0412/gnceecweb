@@ -1,8 +1,14 @@
+"use client";
+
 import Image from 'next/image';
 import Logo from '../../public/images/logo.png';
 import TextAnim from './TypewriterAnim';
+import { useEffect } from 'react';
 
 const Home = () => {
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, [])
 
 	return (
 		<div className="w-screen h-screen flex flex-col justify-center items-center">
@@ -15,7 +21,7 @@ const Home = () => {
 					<div className='flex flex-row'>
 						<div className="text-black dark:text-white block md:hidden mr-4">26111</div>
 						<div className="text-gnce dark:brightness-150">
-							G<TextAnim text="NCE" />
+							G<TextAnim text="NCE" delay={0.5} />
 						</div>
 					</div>
 					<div className="text-primary-light dark:text-primary-dark">

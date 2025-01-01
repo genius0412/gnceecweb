@@ -5,7 +5,7 @@ import path from 'path';
 
 const getPostMetadata = () : PostMetadata[] => {
 	const folder = path.join(process.cwd(), "src/posts/");
-	const markdownPosts = fs.readdirSync(folder).filter((file) => file.endsWith('.md'));
+	const markdownPosts = fs.readdirSync(folder).filter((file) => file.endsWith('.mdx'));
 
 	const posts: PostMetadata[] = markdownPosts.map((fileName) => {
 		const fileContents = fs.readFileSync(folder+fileName, 'utf8');
@@ -15,7 +15,7 @@ const getPostMetadata = () : PostMetadata[] => {
 			date: String(matterResult.data.date),
 			subtitle: String(matterResult.data.subtitle),
 			author: String(matterResult.data.author),
-			slug: fileName.replace(".md", "")
+			slug: fileName.replace(".mdx", "")
 		};
 	}).sort((a: PostMetadata, b: PostMetadata) => {
 		const da = new Date(a.date), db = new Date(b.date);
