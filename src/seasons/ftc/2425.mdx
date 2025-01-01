@@ -13,6 +13,51 @@ From the kickoff event, we learned many things about FTC, including custom manuf
 From examining the field, we realized that the submersible was accessible while hanging a specimen on the rungs. From this, we decided that it would be best if we could **intake and outtake from the same side** for parallel action. This meant that we would need a separate intake and outtake. By carefully measuring the heights and lengths, we decided to go with 5 SAR230 Misumi drawer slides on each side for outtake and 4 SAR220 Misumi drawer slides on each side for intake. (Note: Intake is later changed to 3 SAR220s on each side.)
 ## Chassis Selection
 Even though we had learned how to create a parallel plate chassis during the CAD learning sessions, we decided to go with a basic kit chassis from GoBilda.
+# Mid Season
+## Parallel Plate Iterations
+> Wait, wait, wait... didn't you just say that you will be using the kit chassis?
+
+Well, we were going to. However, we realized that a parallel plate chassis would make it **WAY** easier to mount our slides.
+
+### V1
+<div className="flex flex-col md:flex-row space-x-4 items-center">
+	<img src="/images/2425/Plates/PlateV1.png" alt="Plate V1" className="rounded-lg w-48 h-auto" width="1200" height="1200"/>
+	<p className="p-0">**Iteration 1.**
+We learned how to create this design from the GNCE CAD camp. We put holes on the entire plate, just in case.</p>
+</div>
+
+### V2
+<div className="flex flex-col md:flex-row space-x-4 items-center">
+	<img src="/images/2425/Plates/PlateV2.png" alt="Plate V2" className="rounded-lg w-48 h-auto" width="1200" height="1200"/>
+	<p className="p-0">**Iteration 2.**
+For greater versatility, we redesigned the inner plate into a rectangle to accommodate more components. We included a servo mount for the intake extension mechanism and a bearing mount for the outtake extension mechanism. Additionally, we removed unnecessary holes that previously caused annoyance, resulting in a much cleaner design.
+	</p>
+</div>
+
+### V3
+<div className="flex flex-col md:flex-row space-x-4 items-center">
+	<img src="/images/2425/Plates/PlateV3.png" alt="Plate V3" className="rounded-lg w-48 h-auto" width="1200" height="1200"/>
+	<p className="p-0">**Iteration 3.**
+We moved the hub to the front for a better weight distribution and added more holes for cable management.
+	</p>
+</div>
+
+### V4
+<div className="flex flex-col md:flex-row space-x-4 items-center">
+	<img src="/images/2425/Plates/PlateV4.png" alt="Plate V4" className="rounded-lg w-48 h-auto" width="1200" height="1200"/>
+	<p className="p-0">**Iteration 4.**
+To provide extra support, we matched the height of the outer plate to the inner plate, which greatly improved the protection of the control and expansion hub. Additionally, we extended the plates slightly to fit 104mm GripForce wheels. We also incorporated more support channels on the robot, addressing the instability of the plates observed during drive testing.
+	</p>
+</div>
+
+### V5
+<div className="flex flex-col md:flex-row space-x-4 items-center">
+	<img src="/images/2425/Plates/PlateV5.png" alt="Plate V5" className="rounded-lg w-48 h-auto" width="1200" height="1200"/>
+	<p className="p-0">**Iteration 5.**
+Instead of REX standoffs, we utilized GoBilda beams to mount drive train guards. They were added just in case samples fell into unwanted places. A battery mount was created under the Control Hub for easy connections. Taking inspiration from the Toyota Camry, the drive train and the hub can be accessed easily through a few amount of screws for maintenance.
+	</p>
+</div>
+
 ## Intake Prototype
 This year, the game pieces, or samples, were very hard to pick up due to the sample having multiple orientations and the submersible being randomized. Therefore, we decided that an active intake would be beneficial. An active intake would allow us to intake from the submersible easier during auto, as a claw intake would require Object Detection.
 ## Platforms
@@ -23,19 +68,22 @@ Since the sample could be in multiple orientations, we thought a transfer platfo
 	<p>**Iteration 1.**
 This platform utilized a curved surface to align the sample, just like a funnel. However, it was bulky, and when the sample was perfectly horizontal, it got stuck.</p>
 </div>
+
 ### V2
-<div className="flex flex-col md:flex-row space-x-4 items-center">
+<div className="flex flex-col-reverse md:flex-row space-x-4 items-center">
 	<p>**Iteration 2.**
 This platform used a bump on one side to tilt the sample before properly aligning it with a curve. This design worked very smoothly for us, except at this point, we didn’t need an alignment platform anymore, because we had changed our intake.</p>
 	<img src="/images/2425/Intake/PlatformV2.png" alt="Platform V2" className="rounded-lg w-48 h-auto" width="1200" height="1200"/>
 </div>
+
 ## Active Intake Iterations
 ### V1
 <div className="flex flex-col md:flex-row space-x-4 items-center">
 	<img src="/images/2425/Intake/IntakeV1.png" alt="Intake V1" className="rounded-lg w-48 h-auto" width="1200" height="1200"/>
-	<p>**Iteration 1.**
+	<p className="p-0">**Iteration 1.**
 Our first iteration featured a box-like structure with an axle running through the center, housing multiple boot wheels. A GoBilda Super Speed Servo powered the boot wheels. Our goal with this design was to have the sample go through the bucket and come out the other way. <br/><br/>This design was effective at collecting the samples, but it failed to move them all the way through because the surface was perpendicular. </p>
 </div>
+
 ### V2
 <div className="flex flex-col space-y-4 items-center">
 	<div className="flex flex-row space-x-4 items-center justify-evenly w-full">
@@ -43,8 +91,71 @@ Our first iteration featured a box-like structure with an axle running through t
 		<img src="/images/2425/Intake/IntakeV2-1.png" alt="Intake V2.1" className="rounded-lg w-28 md:w-36 h-auto" width="1200" height="1200"/>
 		<img src="/images/2425/Intake/IntakeV2-2.png" alt="Intake V2.2" className="rounded-lg w-28 md:w-36 h-auto" width="1200" height="1200"/>
 	</div>
-	<p>
+	<p className="p-0">
 		**Iteration 2.**
 Learning from the previous iteration, we added a curve for a smoother transition. We also attempted to integrate the alignment platform into the shovel to save space and enhance efficiency. However, after numerous design changes and small adjustments, we ultimately abandoned this approach due to persistent issues that compromised performance and reliability. Consequently, we reverted to step four in the engineering design process.
 	</p>
+</div>
+
+### V3
+<div className="flex flex-col md:flex-row space-x-4 items-center">
+	<img src="/images/2425/Intake/IntakeV3.png" alt="Intake V3" className="rounded-lg w-48 h-auto" width="1200" height="1200"/>
+	<p className="p-0">**Iteration 3.**
+After observing 24089 Iron Lions, we decided to position two boot wheels on the sides for intake. In the lab, we tested various wheel sizes and found that 96mm Boot Wheels were particularly effective. This iteration was ultimately scrapped due to being excessively bulky and too wide to fit onto the robot. Additionally, the weak support for the pivot mechanism further contributed to its failure.</p>
+</div>
+
+### V4
+<div className="flex flex-col md:flex-row space-x-4 items-center">
+	<img src="/images/2425/Intake/IntakeV4.png" alt="Intake V4" className="rounded-lg w-48 h-auto" width="1200" height="1200"/>
+	<p className="p-0">**Iteration 4.**
+Inspired by the 24089 Iron Lions, iteration 4 featured the implementation of a color sensor in the middle. To reduce bulkiness, we used standoffs instead of a wall and added "wings" to support the pivot mechanism. Guides were also included at the bottom to ensure proper alignment of samples. Additionally, we placed servos vertically to minimize space usage. Despite these innovative breakthroughs, the design remained too bulky for our purposes.</p>
+</div>
+
+### V5
+<div className="flex flex-col md:flex-row space-x-4 items-center">
+	<img src="/images/2425/Intake/IntakeV5.png" alt="Intake V5" className="rounded-lg w-48 h-auto" width="1200" height="1200"/>
+	<p className="p-0">**Iteration 5.** Inspired by 20077 The Indubitables' use of two 72mm Gekko wheels, we integrated this effective intake design into our project. It allowed for sample intake from any orientation, but we faced an issue where samples occasionally got stuck vertically. To resolve this, we created a slot for easier adjustments to the ceiling design without needing to reprint the entire intake.
+
+Additionally, the initial supports for the color sensor were fragile and broke during the first print. To enhance durability, we connected the supports to the wings and added a chamfer for better stability.</p>
+</div>
+
+## Intake Pivot Mechanism
+This year, there was a barrier that the intake had to go past. Therefore, we decided that we needed a pivot mechanism for the intake. 
+
+### V1
+<div className="flex flex-col md:flex-row space-x-4 items-center">
+	<img src="/images/2425/Intake/PivotV1.png" alt="Pivot V1" className="rounded-lg w-48 h-auto" width="1200" height="1200"/>
+	<p className="p-0">**Iteration 1.**
+Inspired by 24089 Iron Lions, we created a gearbox. However, it was bulky, and some standoffs that weren’t available in the lab were used in the CAD.</p>
+</div>
+
+### V2
+<div className="flex flex-col md:flex-row space-x-4 items-center">
+	<img src="/images/2425/Intake/PivotV2.png" alt="Pivot V2" className="rounded-lg w-48 h-auto" width="1200" height="1200"/>
+	<p className="p-0">**Iteration 2.**
+We fixed the previous mistake by moving the servo to the back. We also shortened the linkages. The only downside to this design was the fact that the axle was directly connected to the servo, which might lead to some issues, but we were on a time crunch, so we couldn’t change it.</p>
+</div>
+
+## Intake Extension Mechanism
+We considered three main designs: string, linkage, and scissor. We decided not to use string, as it would be complicated. Following our design philosophy, we used a linkage to extend our slides, as it was simple, fast, and accurate.
+
+### V1
+<div className="flex flex-col md:flex-row space-x-4 items-center">
+	<img src="/images/2425/Intake/ExtendoV1.png" alt="Extendo V1" className="rounded-lg w-48 h-auto" width="1200" height="1200"/>
+	<p className="p-0">**Iteration 1.**
+We used GoBilda Idler Hubs as the free-moving joints. However, we realized there was an easier solution and scrapped the idea.</p>
+</div>
+
+### V2
+<div className="flex flex-col md:flex-row space-x-4 items-center">
+	<img src="/images/2425/Intake/ExtendoV2.png" alt="Extendo V2" className="rounded-lg w-48 h-auto" width="1200" height="1200"/>
+	<p className="p-0">**Iteration 2.**
+To conserve space, we placed the linkage connector and the servo at the front of our robot. However, this placement resulted in the joints being too long, causing them to get caught on the low rung during intaking.</p>
+</div>
+
+### V3
+<div className="flex flex-col md:flex-row space-x-4 items-center">
+	<img src="/images/2425/Intake/ExtendoV3.png" alt="Extendo V3" className="rounded-lg w-48 h-auto" width="1200" height="1200"/>
+	<p className="p-0">**Iteration 3.**
+We corrected the previous issue by relocating the servo to the back. We also shortened the linkages and removed one of the SAR220 drawer slides due to the extension limit. Initially, the joint width was 7.25mm, but we adjusted it to 8mm to align with GoBilda standards. This change allowed us to use GoBilda beams instead of a 3D-printed joint. This meant that we could use GoBilda beams temporarily before printing a carbon fiber joint. Maintenance was much easier as well.</p>
 </div>
